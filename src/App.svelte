@@ -35,8 +35,12 @@
       oninput={calc}
       class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0"
     /><span><span class="font-[KaTeX-Math]">x</span>&#178; +</span>
-    <input bind:value={linCoef} maxlength="6" oninput={calc} class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0" /><span>
-    <span class="font-[KaTeX-Math]">x</span> +</span>
+    <input
+      bind:value={linCoef}
+      maxlength="6"
+      oninput={calc}
+      class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0"
+    /><span> <span class="font-[KaTeX-Math]">x</span> +</span>
     <input
       bind:value={constCoef}
       maxlength="6"

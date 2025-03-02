@@ -57,13 +57,13 @@ export async function solveQuadratic(a: bigint, b: bigint, c: bigint): Promise<Q
   if (d === rootD ** 2n) {
     return {
       type: "(Q,Q)",
-      val: [
-        normalizeRational([-rootD - b, 2n * a]),
-        normalizeRational([rootD - b, 2n * a])
-      ]
+      val: [normalizeRational([-rootD - b, 2n * a]), normalizeRational([rootD - b, 2n * a])]
     };
   }
-  let k = -b, l = 1n, m = d, n = 2n * a;
+  let k = -b,
+    l = 1n,
+    m = d,
+    n = 2n * a;
   rootD = clampedRoot(d < 0 ? -d : d);
 
   while (!(m % 4n)) (m /= 4n), (l *= 2n);
@@ -76,10 +76,7 @@ export async function solveQuadratic(a: bigint, b: bigint, c: bigint): Promise<Q
   if (m === 1n) {
     return {
       type: "(Q,Q)",
-      val: [
-        normalizeRational([k + l, n]),
-        normalizeRational([k - l, n])
-      ]
+      val: [normalizeRational([k + l, n]), normalizeRational([k - l, n])]
     };
   }
   1n / l;

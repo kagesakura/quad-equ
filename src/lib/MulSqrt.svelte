@@ -12,12 +12,10 @@
 
 {#if inner === 1n || inner === 0n}
   <span>[object InvalidValue]</span>
+{:else if inner === -1n}
+  <span>{coeff}</span><span class="font-[KaTeX-Math]">i</span>
+{:else if bigIntAbs(coeff) === 1n}
+  <Sqrt val={bigIntAbs(inner)} />{#if bigIntSgn(inner) === -1}<span class="font-[KaTeX-Math]">i</span>{/if}
 {:else}
-  {#if inner === -1n}
-    <span>{coeff}</span><span class="font-[KaTeX-Math]">i</span>
-  {:else if bigIntAbs(coeff) === 1n}
-    <Sqrt val={bigIntAbs(inner)} />{#if bigIntSgn(inner) === -1}<span class="font-[KaTeX-Math]">i</span>{/if}
-  {:else}
-    <span>{bigIntAbs(coeff)}</span><Sqrt val={bigIntAbs(inner)} />{#if bigIntSgn(inner) === -1}<span class="font-[KaTeX-Math]">i</span>{/if}
-  {/if}
+  <span>{bigIntAbs(coeff)}</span><Sqrt val={bigIntAbs(inner)} />{#if bigIntSgn(inner) === -1}<span class="font-[KaTeX-Math]">i</span>{/if}
 {/if}

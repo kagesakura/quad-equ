@@ -1,12 +1,12 @@
 <script lang="ts">
   interface ComponentProps {
-    val: bigint
+    val: bigint;
   }
   const { val }: ComponentProps = $props();
 </script>
 
 {#if val < 0}
-<span>[object InvalidValue]</span>
+  <span>[object InvalidValue]</span>
 {:else}
-<span>&radic;<span class="border-t-white border-t-1">{val}</span></span>
+  <span>&radic;<span class="border-t-1 border-t-white">{val}</span></span>
 {/if}
