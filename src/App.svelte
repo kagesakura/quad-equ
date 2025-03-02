@@ -19,7 +19,7 @@
       return;
     }
     try {
-      result = await solveQuadratic(BigInt(quadCoef), BigInt(linCoef), BigInt(constCoef));
+      result = solveQuadratic(BigInt(quadCoef), BigInt(linCoef), BigInt(constCoef));
     } catch (e) {
       result = `${e}`;
     }

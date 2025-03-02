@@ -49,7 +49,7 @@ const normalizeRational = (v: [bigint, bigint]): [bigint, bigint] => {
   return [v[0] / cd, v[1] / cd];
 };
 
-export async function solveQuadratic(a: bigint, b: bigint, c: bigint): Promise<QuadAns> {
+export function solveQuadratic(a: bigint, b: bigint, c: bigint): QuadAns {
   1n / a; // It is not allowed variable 'a' to be equal to 0
   const d = b ** 2n - 4n * a * c;
   if (d === 0n) return { type: "Q", val: normalizeRational([-b, 2n * a]) };
@@ -70,7 +70,6 @@ export async function solveQuadratic(a: bigint, b: bigint, c: bigint): Promise<Q
   for (let i = 3n; i <= rootD; i += 2n) {
     const sq = i ** 2n;
     while (!(m % sq)) (m /= sq), (l *= i);
-    if (!(i % 131071n)) await new Promise(requestAnimationFrame);
   }
 
   if (m === 1n) {
