@@ -1,20 +1,9 @@
 <script lang="ts">
+  import type { QuadAns } from "../quad";
   import Fraction from "./Fraction.svelte";
 
   interface ComponentProps {
-    val:
-      | {
-          type: "Q";
-          val: [bigint, bigint];
-        }
-      | {
-          type: "(Q,Q)";
-          val: [[bigint, bigint], [bigint, bigint]];
-        }
-      | {
-          type: "R\\Q";
-          val: [bigint, bigint, bigint, bigint];
-        };
+    val: QuadAns;
   }
   const { val }: ComponentProps = $props();
 </script>
