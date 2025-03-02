@@ -3,3 +3,13 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+@font-face {
+  font-family: KaTeX-Main;
+  src: url("./KaTeX_Main.woff2");
+}
+
+@font-face {
+  font-family: KaTeX-Math;
+  src: url("./KaTeX_Math.woff2");
+}
