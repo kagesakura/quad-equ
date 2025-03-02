@@ -38,14 +38,14 @@
     <span class="col-[4/5] block"><Fraction rationalValue={val.val[1]} /></span>
   </span>
 {:else if bigIntAbs(val.val[3]) === 1n}
-  <span class="col-[1/2] block pr-2"><span class="font-[KaTeX-Math]">x</span> =</span>
+  <span><span class="font-[KaTeX-Math]">x</span> =</span>
   <AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} />
 {:else}
-  <span class="col-[1/2] block pr-2"><span class="font-[KaTeX-Math]">x</span> =</span>
-  <span class="inline-grid grid-rows-1 place-content-center place-items-center">
-    <span class="row-[1_/_2] inline-block w-full text-center">
+  <span class="inline-grid grid-rows-2 place-content-center place-items-center">
+    <span class="col-[1_/_2] row-[1_/_3] pr-2"><span class="font-[KaTeX-Math]">x</span> =</span>
+    <span class="col-[2_/_3] row-[1_/_2] inline-block w-full text-center">
       <AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} />
     </span>
-    <span class="row-[2_/_3] inline-block w-full border-t-1 border-t-white text-center">{val.val[3]}</span>
+    <span class="col-[2_/_3] row-[2_/_3] inline-block w-full border-t-1 border-t-white text-center">{val.val[3]}</span>
   </span>
 {/if}
