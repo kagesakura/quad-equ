@@ -11,6 +11,12 @@
   async function calc() {
     const notFilled = !(quadCoef && linCoef && constCoef);
     if (notFilled) return;
+    const r =
+      /^[\u0009\u000A-\u000D\u001C-\u001F\u0020\u00A0\u1680\u180E\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*(?:\+|-)?\d+[\u0009\u000A-\u000D\u001C-\u001F\u0020\u00A0\u1680\u180E\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*$/;
+    const isInvalid = !(r.exec(quadCoef) && r.exec(linCoef) && r.exec(constCoef));
+    if (isInvalid) {
+      throw new SyntaxError("整数のみ入力可能");
+    }
     try {
       result = await solveQuadratic(BigInt(quadCoef), BigInt(linCoef), BigInt(constCoef));
     } catch (e) {
