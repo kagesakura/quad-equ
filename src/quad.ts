@@ -54,12 +54,11 @@ export function solveQuadratic(a: bigint, b: bigint, c: bigint): QuadAns {
   const d = b ** 2n - 4n * a * c;
   if (d === 0n) return { type: "Q", val: normalizeRational([-b, 2n * a]) };
   let rootD = clampedRoot(d);
-  if (d === rootD ** 2n) {
+  if (d === rootD ** 2n)
     return {
       type: "(Q,Q)",
       val: [normalizeRational([-rootD - b, 2n * a]), normalizeRational([rootD - b, 2n * a])]
     };
-  }
   let k = -b,
     l = 1n,
     m = d,
@@ -72,12 +71,12 @@ export function solveQuadratic(a: bigint, b: bigint, c: bigint): QuadAns {
     while (!(m % sq)) (m /= sq), (l *= i);
   }
 
-  if (m === 1n) {
+  if (m === 1n)
     return {
       type: "(Q,Q)",
       val: [normalizeRational([k + l, n]), normalizeRational([k - l, n])]
     };
-  }
+
   1n / l;
   1n / m;
   1n / n;
