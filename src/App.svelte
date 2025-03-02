@@ -46,7 +46,7 @@
       maxlength="6"
       oninput={calc}
       class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0"
-    /><span> = 0</span>
+    /><span>&#8203; = 0</span>
   </div>
   <div class="p-1 font-[KaTeX-Main] text-2xl">
     {#if result === null}
