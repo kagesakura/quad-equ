@@ -9,7 +9,6 @@
   let result: QuadAns | string | null = $state(null);
 
   async function calc() {
-    console.log([quadCoef, linCoef, constCoef]);
     const notFilled = !(quadCoef && linCoef && constCoef);
     if (notFilled) return;
     try {
