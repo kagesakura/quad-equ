@@ -27,7 +27,7 @@
 {:else if val.val[3] === 0n}
   <span>[object InvalidValue]</span>
 {:else if bigIntAbs(val.val[3]) === 1n}
-  <AddConst val={val.val[0]} /><span>&plusmn;</span><MulSqrt coeff={val.val[1]} inner={val.val[2]} />
+  <AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} />
 {:else}
   <span class="inline-grid grid-rows-1 place-content-center place-items-center">
     <span class="row-[1_/_2] inline-block w-full text-center">
