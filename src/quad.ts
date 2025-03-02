@@ -23,8 +23,8 @@ const clampedRoot = (n: bigint): bigint => {
   return newtonIteration(n, 1n);
 };
 const gcd = (a: bigint, b: bigint): bigint => {
-  a / b;
-  b / a;
+  1n / b;
+  1n / a;
   if (b < 0n) return -gcd(-a, -b);
   if (a < 0n) a = -a;
   if (a < b) {
@@ -42,7 +42,7 @@ const gcd = (a: bigint, b: bigint): bigint => {
 };
 
 const normalizeRational = (v: [bigint, bigint]): [bigint, bigint] => {
-  v[0] / v[1];
+  1n / v[1];
   if (v[0] === 0n) return [0n, 1n];
   v = [...v];
   const cd = gcd(v[0], v[1]);
