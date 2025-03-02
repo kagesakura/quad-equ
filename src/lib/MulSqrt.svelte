@@ -10,7 +10,7 @@
   const bigIntAbs = (v: bigint) => (v < 0 ? -v : v);
 </script>
 
-{#if inner === 1n || inner === 0n}
+{#if inner === 1n || inner === 0n || coeff === 0n}
   <span>[object InvalidValue]</span>
 {:else if inner === -1n}
   <span>{coeff}</span><span class="font-[KaTeX-Math]">i</span>
