@@ -30,9 +30,9 @@
   <AddConst val={val.val[0]} /><span>&plusmn;</span><MulSqrt coeff={val.val[1]} inner={val.val[2]} />
 {:else}
   <span class="inline-grid grid-rows-1 place-content-center place-items-center">
-    <span class="row-[1_/_2] inline-block w-full text-center"
-      ><AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} /></span
-    >
+    <span class="row-[1_/_2] inline-block w-full text-center">
+      <AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} />
+    </span>
     <span class="row-[2_/_3] inline-block w-full border-t-1 border-t-white text-center">{val.val[3]}</span>
   </span>
 {/if}
