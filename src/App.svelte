@@ -15,7 +15,8 @@
       /^[\u0009\u000A-\u000D\u0020\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*(?:\+|-)?\d+[\u0009\u000A-\u000D\u0020\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*$/;
     const isInvalid = !(r.exec(quadCoef) && r.exec(linCoef) && r.exec(constCoef));
     if (isInvalid) {
-      throw new SyntaxError("整数のみ入力可能");
+      result = "整数のみ入力可能";
+      return;
     }
     try {
       result = await solveQuadratic(BigInt(quadCoef), BigInt(linCoef), BigInt(constCoef));
