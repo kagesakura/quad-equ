@@ -20,12 +20,16 @@
   }
 </script>
 
-<main class="p-[3em_0] grid place-items-center text-neutral-200 bg-neutral-800 h-svh">
+<main class="grid h-svh place-items-center bg-neutral-800 p-[3em_0] text-neutral-200">
   <h1 class="p-1 text-3xl font-bold">Quadratic Equation Solver</h1>
   <div class="p-1 text-3xl">
-    <input bind:value={quadCoef} oninput={calc} class="p-[0_3px] text-right w-20 rounded-[6px] border-1 border-neutral-500 outline-0" />x&#178; +
-    <input bind:value={linCoef} oninput={calc} class="p-[0_3px] text-right w-20 rounded-[6px] border-1 border-neutral-500 outline-0" />x +
-    <input bind:value={constCoef} oninput={calc} class="p-[0_3px] text-right w-20 rounded-[6px] border-1 border-neutral-500 outline-0" />
+    <input
+      bind:value={quadCoef}
+      oninput={calc}
+      class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0"
+    />x&#178; +
+    <input bind:value={linCoef} oninput={calc} class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0" />x +
+    <input bind:value={constCoef} oninput={calc} class="w-20 rounded-[6px] border-1 border-neutral-500 p-[0_3px] text-right outline-0" />
     = 0
   </div>
   <div class="p-1 text-3xl">
