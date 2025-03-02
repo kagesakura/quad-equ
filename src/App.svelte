@@ -28,7 +28,7 @@
 
 <main class="grid h-svh place-items-center bg-neutral-800 p-[3em_0] text-neutral-200">
   <h1 class="p-1 text-3xl font-bold">Quadratic Equation Solver</h1>
-  <div class="p-1 font-[KaTeX-Main] text-2xl">
+  <div class="p-1 font-[KaTeX-Main] text-xl">
     <input
       bind:value={quadCoef}
       maxlength="6"
