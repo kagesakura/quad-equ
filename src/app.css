@@ -6,10 +6,10 @@
 
 @font-face {
   font-family: KaTeX-Main;
-  src: url("./KaTeX_Main.woff2");
+  src: url("../KaTeX_Main.woff2");
 }
 
 @font-face {
   font-family: KaTeX-Math;
-  src: url("./KaTeX_Math.woff2");
+  src: url("../KaTeX_Math.woff2");
 }
