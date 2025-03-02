@@ -10,6 +10,19 @@
   const { val }: ComponentProps = $props();
 
   const bigIntAbs = (v: bigint) => (v < 0 ? -v : v);
+
+  if (val.type === "Q") {
+    1n / val.val[1];
+  } else if (val.type === "(Q,Q)") {
+    1n / val.val[0][1];
+    1n / val.val[1][1];
+  } else if (val.type === "R\\Q") {
+    1n / val.val[2];
+    if (0n >= val.val[1]) throw new Error("Invalid property");
+    if (0n >= val.val[3]) throw new Error("Invalid property");
+  } else {
+    throw new Error("Invalid property");
+  }
 </script>
 
 {#if val.type === "Q"}
@@ -24,8 +37,6 @@
     <span class="col-[3/4] block pr-2">,</span>
     <span class="col-[4/5] block"><Fraction rationalValue={val.val[1]} /></span>
   </span>
-{:else if val.val[3] === 0n}
-  <span>[object InvalidValue]</span>
 {:else if bigIntAbs(val.val[3]) === 1n}
   <AddConst val={val.val[0]} />&plusmn;<MulSqrt coeff={val.val[1]} inner={val.val[2]} />
 {:else}

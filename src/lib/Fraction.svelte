@@ -5,11 +5,11 @@
   const { rationalValue }: ComponentProps = $props();
   const bigIntSgn = (v: bigint) => (v > 0 ? 1 : v < 0 ? -1 : 0);
   const bigIntAbs = (v: bigint) => (v < 0 ? -v : v);
+
+  1n / rationalValue[1];
 </script>
 
-{#if rationalValue[1] === 0n}
-  <span>[object InvalidValue]</span>
-{:else if rationalValue[0] === 0n}
+{#if rationalValue[0] === 0n}
   <span>0</span>
 {:else if rationalValue[1] === 1n}
   {#if rationalValue[0] < 0n}<span>−</span>{/if}<span>{bigIntAbs(rationalValue[0])}</span>
