@@ -19,11 +19,11 @@
   <span class="inline-grid place-content-center place-items-center">
     <span class="col-[1_/_2] row-[1_/_3]">－</span>
     <span class="col-[2_/_3] row-[1_/_2]">{bigIntAbs(rationalValue[0])}</span>
-    <span class="col-[2_/_3] row-[2_/_3] overline">{bigIntAbs(rationalValue[1])}</span>
+    <span class="col-[2_/_3] row-[2_/_3] border-t-1 border-t-white">{bigIntAbs(rationalValue[1])}</span>
   </span>
 {:else}
   <span class="inline-grid place-content-center place-items-center">
     <span class="row-[1_/_2]">{bigIntAbs(rationalValue[0])}</span>
-    <span class="row-[2_/_3] overline">{bigIntAbs(rationalValue[1])}</span>
+    <span class="row-[2_/_3] border-t-1 border-t-white">{bigIntAbs(rationalValue[1])}</span>
   </span>
 {/if}
